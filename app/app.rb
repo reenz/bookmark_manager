@@ -1,10 +1,12 @@
+ENV["RACK_ENV"] ||= "development"
+
 require 'sinatra'
 require_relative './models/link'
 
 class Bookmark < Sinatra::Base
 
   get '/' do
-    "Welcome"
+    erb :welcome
   end
 
   get '/links' do
