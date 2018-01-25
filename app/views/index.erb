@@ -1,13 +1,4 @@
-<h1> Links </h1>
-<ul id='links'>
-  <% @links.each do |link| %>
-    <li>
-      Title: <%= link.title %>
-      URL:   <%= link.url   %>
-      Tag: <%= link.tags.map(&:name).join(", ") %>
-    </li>
-  <% end %>
-</ul>
-<form action="/links/new" method="get">
-  <input type="submit" value="Click to create links">
+<h1>Welcome!</h1>
+<form action="/links" method="get">
+  <input type="submit" value="Click to see links">
 </form>

@@ -1,0 +1,11 @@
+<h1> Tags </h1>
+<form> TAGS:
+<input type='text' name='tag' />
+<% link.tags.each do |link, tag| %>
+  <li>
+    Title: <%= link.title %>
+    URL:   <%= link.url   %>
+    Tag: <%= link.tags.map(&:name).join(", ") %>
+  </li>
+<% end %>
+</form>
