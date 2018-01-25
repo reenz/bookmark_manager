@@ -19,9 +19,10 @@ class Bookmark < Sinatra::Base
   end
 
   post '/post_links' do
-    link = Link.new(title: params[:title], url: params[:url])
-    tag = Tag.first_or_create(name: params[:tag])
-    link.tags << tag
+    link = Link.create(title: params[:title], url: params[:url])
+    params[:tags].split.each do |tag|
+      link.tags << Tag.first_or_create(name: tag)
+    end
     link.save
     redirect '/links'
   end
@@ -31,7 +32,5 @@ class Bookmark < Sinatra::Base
     @links = tag ? tag.links : []
     erb :links
   end
-
-
-
+  
 end
