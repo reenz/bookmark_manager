@@ -4,4 +4,9 @@ feature 'User sign up'do
     expect(page).to have_content ('Welcome, reena@example.com')
     expect(User.first.email).to eq ('reena@example.com')
   end
+
+  scenario 'password confirmation' do
+
+    expect { sign_up(password_confirmation: 'password') }.not_to change(User, :count)
+  end
 end
