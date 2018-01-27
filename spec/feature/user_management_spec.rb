@@ -28,6 +28,4 @@ feature 'User sign up'do
       expect(current_path).to eq('/users')
       expect(page).to have_content 'Email has an invalid format'
     end
-
-
 end
