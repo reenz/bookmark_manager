@@ -6,6 +6,7 @@ require 'capybara/rspec'
 require './app/app'
 require 'database_cleaner'
 require 'web_helper'
+require_relative 'helpers/session'
 
 Capybara.app = Bookmark
 
@@ -44,4 +45,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+end
+
+RSpec.configure do |config|
+  config.include SessionHelpers
 end
