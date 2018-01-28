@@ -6,6 +6,7 @@ require 'capybara/rspec'
 require './app/app'
 require 'database_cleaner'
 require 'web_helper'
+require 'timecop'
 require_relative 'helpers/session'
 
 Capybara.app = Bookmark
